@@ -1,0 +1,33 @@
+# ignore IDE/hidden/OS cache files
+.*
+*~
+nbproject
+nb-configuration.xml
+Session.vim
+*.tmproj
+*.tmproject
+.DS_Store
+tmtags
+Thumbs.db
+Desktop.ini
+
+# Ignore Composer downloads
+/vendor
+*.lock
+
+# keep some hiddens
+!.htaccess
+!/.gitignore
+.travis.yml
+
+#### Ignore Keys
+*.p12
+*.pem
+*.key
+*.der
+
+#### Packages
+*.tar
+*.tar.gz
+*.zip
+*.rar
