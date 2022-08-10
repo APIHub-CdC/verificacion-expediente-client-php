@@ -8,10 +8,10 @@ use CirculoDeCredito\VerificacionExpediente\Model\Domicilio;
 use CirculoDeCredito\VerificacionExpediente\Api\ApiClient;
 use CirculoDeCredito\VerificacionExpediente\Configuration;
 use CirculoDeCredito\VerificacionExpediente\ApiException;
-use CirculoDeCredito\VerificacionExpediente\Interceptor\KeyHandler;
-use CirculoDeCredito\VerificacionExpediente\Interceptor\MiddlewareEvents;
 use CirculoDeCredito\VerificacionExpediente\Model\CatalogoEstados;
 use CirculoDeCredito\VerificacionExpediente\Model\CatalogoSexo;
+use Signer\Manager\Interceptor\MiddlewareEvents;
+use Signer\Manager\Interceptor\KeyHandler;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
 
@@ -45,8 +45,7 @@ class VerificacionDeExpedienteApiTest extends \PHPUnit\Framework\TestCase
         $this->config->setHost($apiUrl);
 
 	$this->httpClient = new HttpClient([
-	    'handler' => $handler,
-            'base_uri' => $apiUrl
+	    'handler' => $handler
 	]);
     }
     
